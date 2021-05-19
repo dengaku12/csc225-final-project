@@ -16,11 +16,11 @@ function Console(props){
     }, []);
 
     if(!gameConsole){
-        return <div>
+        return <div className="alert alert-primary">
         <div className="spinner-border text-success mr-2" role="status">
             <span className="sr-only">Getting your consoles...</span>
         </div>
-        Shit this is takin a while...
+        Console coming right up...
         <div className="spinner-border text-danger ml-2" role="status">
             <span className="sr-only">Getting your consoles...</span>
         </div>

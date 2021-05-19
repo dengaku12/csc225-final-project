@@ -16,7 +16,7 @@ function Consoles(){
     }, []);
 
     if(gameConsoles.length === 0){
-        return <div>
+        return <div className="d-flex justify-content-center alert alert-primary">
             <div className="spinner-border text-success mr-2" role="status">
                 <span className="sr-only">Getting your consoles...</span>
             </div>
@@ -27,20 +27,25 @@ function Consoles(){
         </div>
     }
     if(!!selectedConsole){
-        return <div>
+        return <div className="d-flex flex-column  align-items-center">
             <Console id={selectedConsole}/>
-            <button className="btn btn-danger" onClick={() => setSelectedConsole(null)}>Reset</button>
+            <button className="btn btn-danger" style={{width: '20rem'}} onClick={() => setSelectedConsole(null)}>Reset</button>
         </div>
     }
-    return <div>
+    return <div className="d-flex flex-column justify-content-center">
+        <h1 className="text-center">Consoles</h1>
         {gameConsoles.map(gameConsole => {
             return (
-                <p className="mb-2" key={gameConsole.id}>
-                    <button className="btn btn-primary" onClick={() => setSelectedConsole(gameConsole.id)}>
-                        {gameConsole.name}
-                    </button>
-                    <img src={gameConsole.image} className="img-fluid rounded" alt="console" />
-                </p>
+                <div className="row mb-4 d-flex justify-content-center" key={gameConsole.id}>
+                    <div className="col-lg">
+                        <button className="btn btn-primary" onClick={() => setSelectedConsole(gameConsole.id)}>
+                            {gameConsole.name}
+                        </button>
+                    </div>
+                    <div className="col-lg">
+                        <img src={gameConsole.image} className="img-fluid rounded border" alt="console" />
+                    </div>
+                </div>
             );
         })}
     </div>
