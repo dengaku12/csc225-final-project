@@ -28,13 +28,14 @@ function Console(props){
     }
 
     return <div>
+        <h1 className="text-center">Console Info</h1>
         <div className="card" style={{width: '20rem'}}>
             <img src={gameConsole.image} className="card-img-top" alt="console" />
             <div className="card-body">
                 <h5 className="card-title">{gameConsole.name}</h5>
                 <p className="card-text">Price: ${gameConsole.price}</p>
                 <p className="card-text">Country: {gameConsole.country}</p>
-                <p className="card-text">Release Year: ${gameConsole.releaseYear}</p>
+                <p className="card-text">Release Year: {gameConsole.releaseYear}</p>
             </div>
         </div>
     </div>
